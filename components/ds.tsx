@@ -9,19 +9,28 @@ type DSProps = {
 };
 
 export const Section = ({ children, className, id, style }: DSProps) => (
-  <section className={cn("py-6", className)} id={id} style={style}>
+  <section className={cn("py-8 sm:py-12", className)} id={id} style={style}>
     {children}
   </section>
 );
 
 export const Container = ({ children, className, id, style }: DSProps) => (
-  <div className={cn("max-w-2xl mx-auto px-4", className)} id={id} style={style}>
+  <div
+    className={cn("max-w-2xl mx-auto px-4", className)}
+    id={id}
+    style={style}
+  >
     {children}
   </div>
 );
 
 export const Layout = ({ children, className, style }: DSProps) => (
-  <html lang="en" suppressHydrationWarning className={cn(className)} style={style}>
+  <html
+    lang="en"
+    suppressHydrationWarning
+    className={cn(className)}
+    style={style}
+  >
     {children}
   </html>
 );
@@ -54,7 +63,7 @@ export const Prose = ({
       "[&_pre]:mb-3",
       "[&_img]:rounded [&_img]:my-3",
       "[&_hr]:my-6 [&_hr]:border-border",
-      className
+      className,
     )}
     id={id}
     dangerouslySetInnerHTML={dangerouslySetInnerHTML}

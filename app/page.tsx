@@ -17,7 +17,7 @@ export default function HomePage() {
 const Hero = () => {
   return (
     <Section>
-      <Container className="space-y-2">
+      <Container className="space-y-2 text-4xl">
         <h1>Gestalt Labs</h1>
         <p className="text-muted-foreground">
           Applying design and AI to build systems that drive business outcomes.
