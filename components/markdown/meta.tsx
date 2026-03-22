@@ -1,5 +1,6 @@
 import { Section, Container } from "@/components/ds";
 import { formatDate } from "@/lib/mdx";
+import { postViewTransitionName } from "@/lib/view-transitions";
 import { CopyButton } from "./copy-button";
 import { BackButton } from "./back-button";
 
@@ -12,12 +13,20 @@ interface MetaProps {
   slug?: string;
 }
 
-export function Meta({ title, description, date, author }: MetaProps) {
+export function Meta({ title, description, date, author, slug }: MetaProps) {
   return (
     <Section>
       <Container className="space-y-2">
         <div className="flex items-start justify-between gap-2">
-          <h1>{title}</h1>
+          <h1
+            style={
+              slug
+                ? { viewTransitionName: postViewTransitionName(slug) }
+                : undefined
+            }
+          >
+            {title}
+          </h1>
           <div className="flex gap-2">
             <BackButton />
             <CopyButton />

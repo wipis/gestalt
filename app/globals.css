@@ -83,3 +83,11 @@ body {
 button, a {
   @apply cursor-pointer;
 }
+
+@supports (view-transition-name: none) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.28s;
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+  }
+}

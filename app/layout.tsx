@@ -4,6 +4,7 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/site/footer";
 import { Inter_Tight } from "next/font/google";
+import { ViewTransitions } from "next-view-transitions";
 
 import { siteConfig } from "@/lib/site";
 
@@ -62,26 +63,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Layout className={sans.variable}>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased w-screen flex flex-col",
-        )}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+    <ViewTransitions>
+      <Layout className={sans.variable}>
+        <body
+          className={cn(
+            "min-h-screen bg-background font-sans antialiased w-screen flex flex-col",
+          )}
         >
-          <Main className="flex-1">{children}</Main>
-          <Footer />
-          <div className="fixed bottom-6 right-6">
-            <ThemeToggle />
-          </div>
-          <Toaster position="top-center" />
-        </ThemeProvider>
-      </body>
-    </Layout>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Main className="flex-1">{children}</Main>
+            <Footer />
+            <div className="fixed bottom-6 right-6">
+              <ThemeToggle />
+            </div>
+            <Toaster position="top-center" />
+          </ThemeProvider>
+        </body>
+      </Layout>
+    </ViewTransitions>
   );
 }
