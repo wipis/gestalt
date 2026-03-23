@@ -1,6 +1,5 @@
 import { Section, Container } from "@/components/ds";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
-import { Logo } from "./logo";
 
 export const Footer = () => {
   return (
