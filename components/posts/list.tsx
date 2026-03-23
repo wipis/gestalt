@@ -5,7 +5,7 @@ import type { Post } from "#site/content";
 
 export const List = ({ posts }: { posts: Post[] }) => {
   return (
-    <Section>
+    <Section className="uppercase">
       <Container className="space-y-2">
         <h2 className="text-muted-foreground">Posts</h2>
         {posts.length > 0 ? (

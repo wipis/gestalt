@@ -1,9 +1,9 @@
+import { ViewTransitions } from "next-view-transitions";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Layout, Main } from "@/components/ds";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/site/footer";
-import { Inter_Tight } from "next/font/google";
-import { ViewTransitions } from "next-view-transitions";
+import { Google_Sans_Code } from "next/font/google";
 
 import { siteConfig } from "@/lib/site";
 
@@ -14,10 +14,9 @@ import "./hljs.css";
 
 import { cn } from "@/lib/utils";
 
-const sans = Inter_Tight({
+const fontMono = Google_Sans_Code({
   subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-imported-mono",
 });
 
 export const metadata: Metadata = {
@@ -63,10 +62,10 @@ export default function RootLayout({
 }) {
   return (
     <ViewTransitions>
-      <Layout className={sans.variable}>
+      <Layout className={fontMono.variable}>
         <body
           className={cn(
-            "min-h-screen bg-background font-sans antialiased w-screen flex flex-col text-lg",
+            "min-h-screen bg-background font-mono antialiased w-screen flex flex-col text-lg leading-tight tracking-tight",
           )}
         >
           <ThemeProvider
