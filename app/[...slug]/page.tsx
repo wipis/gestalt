@@ -78,7 +78,7 @@ export default async function Page(props: PageProps) {
         <Container className="space-y-4 uppercase font-mono bg-foreground text-background rounded-3xl p-8">
           <h1 className="sr-only">{post.title}</h1>
           <h2>
-            <span className="inline-flex text-orange-500">●</span> {post.title}
+            <span className="inline-flex text-blue-500">●</span> {post.title}
           </h2>
           {post.description && (
             <h3 className="text-zinc-500">{post.description}</h3>

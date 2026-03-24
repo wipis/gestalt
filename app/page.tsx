@@ -20,15 +20,12 @@ const Hero = () => {
       <Container className="space-y-4 uppercase font-mono bg-foreground text-background rounded-3xl p-8">
         <h1 className="sr-only">Gestalt Lab</h1>
         <h2>
-          Welcome to <span className="inline-flex  text-orange-500">●</span>{" "}
+          Welcome to <span className="inline-flex  text-blue-500">●</span>{" "}
           Gestalt Lab
         </h2>
         <h3 className="text-zinc-500">
           Applying design and AI to build systems that drive business outcomes.
         </h3>
-        <p className="text-base  mt-12">
-          by <a href="https://bridger.to">Bridger Tower</a>
-        </p>
       </Container>
     </Section>
   );

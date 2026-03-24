@@ -7,7 +7,7 @@ export const Footer = () => {
       <Section className="py-6">
         <Container className="flex items-center justify-between gap-4 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
-            <span className="inline-flex  text-orange-500">●</span> Gestalt Lab
+            <span className="inline-flex  text-blue-500">●</span> Gestalt Lab
             <p>
               &copy; {new Date().getFullYear()}{" "}
               <a
