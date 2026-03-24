@@ -5,12 +5,13 @@ import { MDXContent } from "@/components/markdown/mdx-content";
 import { getReferenceUrlsForSlug } from "@/lib/post-reference-urls";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
 import { siteConfig } from "@/lib/site";
+import { postViewTransitionName } from "@/lib/view-transitions";
 import { notFound } from "next/navigation";
 
 import type { Metadata } from "next";
 import type { Post } from ".velite";
 
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 interface PageProps {
   params: Promise<{
@@ -78,7 +79,10 @@ export default async function Page(props: PageProps) {
         <Container className="space-y-4 uppercase font-mono bg-foreground text-background rounded-3xl p-8">
           <h1 className="sr-only">{post.title}</h1>
           <h2>
-            <span className="inline-flex text-blue-500">●</span> {post.title}
+            <span className="inline-flex text-blue-500">●</span>{" "}
+            <span style={{ viewTransitionName: postViewTransitionName(post.slug) }}>
+              {post.title}
+            </span>
           </h2>
           {post.description && (
             <h3 className="text-zinc-500">{post.description}</h3>

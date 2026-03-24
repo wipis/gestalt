@@ -87,9 +87,61 @@ a {
 }
 
 @supports (view-transition-name: none) {
+    ::view-transition-group(root) {
+        animation-duration: 0.42s;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
     ::view-transition-old(root),
     ::view-transition-new(root) {
-        animation-duration: 0.28s;
-        animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+        animation-duration: 0.42s;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+        transform-origin: top center;
+    }
+
+    ::view-transition-old(root) {
+        animation-name: page-exit;
+    }
+
+    ::view-transition-new(root) {
+        animation-name: page-enter;
+    }
+
+    ::view-transition-group(*) {
+        animation-duration: 0.42s;
+        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @keyframes page-enter {
+        from {
+            opacity: 0;
+            transform: translateY(12px) scale(0.99);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes page-exit {
+        from {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        to {
+            opacity: 0;
+            transform: translateY(6px) scale(0.995);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(root),
+    ::view-transition-group(*),
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+        animation-duration: 0.01ms;
     }
 }
