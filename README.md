@@ -1,4 +1,4 @@
-# Gestalt Labs
+# Gestalt Lab
 
 Studying how humans and AI work together. Building software that reflects what's learned.
 

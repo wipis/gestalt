@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Gestalt Labs",
+  name: "Gestalt Lab",
   url: "https://gestalt.xyz",
   description: "Research, design, and development at the intersection of human-computer interaction and applied AI.",
   author: "Bridger Tower",

@@ -18,10 +18,10 @@ const Hero = () => {
   return (
     <Section>
       <Container className="space-y-4 uppercase font-mono bg-foreground text-background rounded-3xl p-8">
-        <h1 className="sr-only">Gestalt Labs</h1>
+        <h1 className="sr-only">Gestalt Lab</h1>
         <h2>
           Welcome to <span className="inline-flex  text-orange-500">●</span>{" "}
-          Gestalt Labs
+          Gestalt Lab
         </h2>
         <h3 className="text-zinc-500">
           Applying design and AI to build systems that drive business outcomes.
